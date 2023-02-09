@@ -176,6 +176,11 @@ const LatestEpisodeImageContainer = styled.div`
     padding: 5rem;
     padding-top: 10rem;
   }
+  @media screen and (max-width: 600px) {
+    & > div {
+      padding: 5rem 2rem;
+    }
+  }
 `;
 const SectionOneDiv = styled.div`
   padding: 6rem;
