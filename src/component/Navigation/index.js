@@ -12,6 +12,7 @@ const Nav = styled.nav`
     list-style: none;
     gap: 4rem;
     a {
+      height: fit-content;
       text-decoration: none;
       font-size: 20px;
       line-height: 24px;
