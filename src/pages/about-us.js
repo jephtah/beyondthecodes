@@ -15,19 +15,23 @@ const ImageContainer = styled.img`
   margin-top: 0;
 `;
 const Header = styled.header`
-  height: 80vh;
+  height: 85vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-top: 10rem;
-  margin-bottom: 10rem;
+  margin-bottom: 20rem;
   overflow: hidden;
+
   div:nth-child(1) {
     color: white;
     text-align: center;
     max-width: 50%;
     margin: 6rem auto;
+    img {
+      overflow: hidden;
+    }
     h1 {
       font-size: 80px;
       font-weight: 300;
@@ -42,7 +46,7 @@ const Header = styled.header`
   }
   @media screen and (max-width: 700px) {
     height: 100vh;
-
+    margin-bottom: 2rem;
     div:nth-child(1) {
       padding-top: 2rem;
       max-width: 90%;
@@ -219,7 +223,26 @@ const LastSection = styled(Grid)`
     }
   }
 `;
+const Box = styled.div`
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  height: 13rem;
+  bottom: 0;
+  z-index: 4;
+  display: flex;
+  align-items: flex-end;
+  width: 100vw;
+  // overflow: hidden;
+  div {
+    background-color: white;
+    width: 50%;
+    height: 100%;
+    margin: 0 0.3rem;
+  }
+`;
 const AboutUs = () => {
+  const heights = [100, 20, 50, 70, 30, 60, 80];
   return (
     <>
       <Head>
@@ -229,6 +252,19 @@ const AboutUs = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ImageContainer src="./images/about-us-bg.png" alt="" />
+      <Box>
+        {new Array(10)
+          .fill(0)
+          .map((i) =>
+            heights.map((height) => (
+              <div style={{ height: height + "%" }} key={height}></div>
+            ))
+          )}
+
+        {/* {heights.map((height) => (
+          <div style={{ height: height + "%" }} key={height}></div>
+        ))} */}
+      </Box>
       <Layout>
         <Container>
           <Header>

@@ -36,7 +36,6 @@ const InputContainer = styled.div`
 `;
 
 const Input = ({
-  icon = false,
   secondary = false,
   iconSecondary = false,
   iconComponent: IconComponent,
@@ -46,7 +45,7 @@ const Input = ({
     <InputContainer secondary={secondary} iconSecondary={iconSecondary}>
       <input {...rest} />
 
-      {icon && (
+      {IconComponent && (
         <div className="icon">
           <IconComponent />
         </div>

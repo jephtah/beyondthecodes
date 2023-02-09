@@ -1,14 +1,11 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import Layout from "@/layout";
 import { Container } from "@/layout/Container";
 import { Input } from "@/component";
-import { Arrow, MicrophoneIcon } from "@/component/icons";
+import { Arrow, MicrophoneIcon, Play } from "@/component/icons";
 import { Button } from "@/component/Button";
 import styled from "styled-components";
 import { SearchIcon } from "@/component/icons";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const HeaderContainer = styled.header`
   display: grid;
@@ -54,7 +51,7 @@ const HeaderTextContainer = styled.div`
   flex-direction: column;
   align-content: space-between;
   justify-content: space-between;
-  margin-right: 6rem;
+  margin-right: 4.43rem;
   h1 {
     // margin-right: 5rem;
     margin-bottom: 4rem;
@@ -163,7 +160,7 @@ const LatestEpisodeImageContainer = styled.div`
     height: 100%;
     position: absolute;
   }
-  div {
+  & > div {
     // max-width: 60%;
     margin-top: 3rem;
     & > * {
@@ -257,7 +254,6 @@ export default function Home() {
                 </div>
                 <Input
                   placeholder="Search Podcast..."
-                  icon
                   iconComponent={SearchIcon}
                 />
               </HeaderTextContainer>
@@ -321,7 +317,11 @@ export default function Home() {
                 <div>
                   <p>Eps. 01 - 45 Min</p>
                   <p>How to build your personal resilience.</p>
-                  <Button value="Start listening" secondary />
+                  <Button
+                    value="Start listening"
+                    secondary
+                    iconComponent={Play}
+                  />
                 </div>
               </LatestEpisodeImageContainer>
               <FlexColumn>

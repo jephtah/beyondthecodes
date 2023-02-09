@@ -123,7 +123,6 @@ const Footer = () => {
             <p>Get rich contents via mail</p>
             <Input
               placeholder="Enter your email"
-              icon
               iconSecondary
               iconComponent={ArrowRight}
             />

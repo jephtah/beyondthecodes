@@ -11,6 +11,7 @@ import Instagram from "./instgram";
 import Twitter from "./twitter";
 import Youtube from "./youtube";
 import Arrow from "./arrow";
+import Play from "./play";
 export {
   Logo,
   LogoWhite,
@@ -25,4 +26,5 @@ export {
   Twitter,
   Youtube,
   Arrow,
+  Play,
 };
