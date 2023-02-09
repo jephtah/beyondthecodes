@@ -11,8 +11,9 @@ const Container = styled.div`
   width: 70%;
   justify-content: space-between;
   @media screen and (max-width: 1000px) {
+    width: 90%;
     padding: 2rem;
-    top: -40%;
+    top: -30%;
   }
 `;
 

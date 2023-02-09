@@ -48,6 +48,7 @@ const FooterDiv = styled.footer`
     align-items: center;
     & > div {
       display: flex;
+
       align-items: center;
       span {
         background-color: ${({ theme }) => theme.colors.primary};
@@ -64,9 +65,12 @@ const FooterDiv = styled.footer`
   }
   @media screen and (max-width: 1000px) {
     padding: 2rem 0.5rem;
+    & > div {
+      max-width: 90%;
+    }
     & > div:nth-child(1) {
       padding: 0rem;
-      // max-width: 90%;
+
       flex-wrap: wrap;
       justify-content: space-between;
       & > div {

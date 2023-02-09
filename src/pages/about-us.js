@@ -171,40 +171,49 @@ const LastSection = styled(Grid)`
       color: #878787;
       font-size: 18px;
       line-height: 37px;
+      margin-right: 7rem;
     }
   }
   & > div:nth-child(2) {
     position: relative;
-
+    display: flex;
+    justify-content: flex-end;
     img {
       width: 80%;
-      //   position: absolute;
+
       top: -20%;
+      right: 0;
     }
-    div:nth-child(1) {
+
+    & > div:nth-child(2) {
       height: 100%;
       background-color: ${({ theme }) => theme.colors.primary};
       position: absolute;
       width: 80%;
       height: 70%;
-      left: 20%;
-      top: 40%;
+      left: 0;
+      bottom: -10%;
       z-index: -2;
     }
-    div:nth-child(2) {
+    & > div:nth-child(3) {
       background-color: #e0e0e0;
       height: 15%;
       position: absolute;
       width: 50%;
       z-index: -1;
       top: 30%;
-      right: 10%;
+      left: 10%;
     }
   }
   @media screen and (max-width: 700px) {
     & > div:nth-child(1) {
-      margin: 2rem;
+      margin: 0;
+      p {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+      }
     }
+
     & > div:nth-child(2) {
       width: 90%;
     }
