@@ -83,12 +83,12 @@ const FooterDiv = styled.footer`
     }
     & > div:nth-child(2) {
       max-width: 100%;
+      flex-direction: column;
+      justify-content: space-between;
       div {
+        justify-content: space-between;
         p {
           font-size: 14px;
-        }
-        & > * {
-          margin: 2px;
         }
       }
     }
@@ -133,7 +133,7 @@ const Footer = () => {
       </div>
       <div>
         <div>
-          <p>Copyright ©2023</p>
+          <p>Copyright ©{new Date().getFullYear()}</p>
           <span />
           <p>Beyond The Codes</p>
         </div>
