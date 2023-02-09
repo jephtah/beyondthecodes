@@ -20,18 +20,20 @@ const Header = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 5rem;
+  padding-top: 10rem;
   margin-bottom: 10rem;
+  overflow: hidden;
   div:nth-child(1) {
     color: white;
     text-align: center;
     max-width: 50%;
-    margin: 0 auto;
+    margin: 6rem auto;
     h1 {
       font-size: 80px;
       font-weight: 300;
       line-height: 70px;
       margin-bottom: 4rem;
+      color: ${({ theme }) => theme.colors.primary};
     }
     p {
       font-size: 20px;
@@ -39,11 +41,12 @@ const Header = styled.header`
     }
   }
   @media screen and (max-width: 700px) {
-    height: 40vh;
+    height: 100vh;
 
     div:nth-child(1) {
       padding-top: 2rem;
       max-width: 90%;
+      margin: 2rem auto;
       h1 {
         font-size: 50px;
       }

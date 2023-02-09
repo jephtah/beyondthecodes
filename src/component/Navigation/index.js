@@ -24,8 +24,11 @@ const Nav = styled.nav`
     }
   }
   @media screen and (max-width: 700px) {
+    position: relative;
     ul {
       flex-direction: column;
+      position: absolute;
+      right: 0;
     }
   }
 `;
