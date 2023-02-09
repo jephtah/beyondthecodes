@@ -9,7 +9,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   width: 70%;
-  justify-content: center;
+  justify-content: space-between;
   @media screen and (max-width: 1000px) {
     padding: 2rem;
     top: -40%;

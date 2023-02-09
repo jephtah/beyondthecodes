@@ -19,6 +19,9 @@ const Div = styled.section`
       line-height: 25px;
       margin-bottom: 1rem;
     }
+    p {
+      font-size: 14px;
+    }
   }
 `;
 const Flex = styled.diz;

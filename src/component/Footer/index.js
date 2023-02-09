@@ -46,7 +46,14 @@ const FooterDiv = styled.footer`
     padding-top: 2rem;
     display: flex;
     align-items: center;
-    div {
+    & > div {
+      display: flex;
+      align-items: center;
+      span {
+        background-color: ${({ theme }) => theme.colors.primary};
+        padding: 3px;
+        border-radius: 50%;
+      }
       & > * {
         margin: 0.5rem;
       }
