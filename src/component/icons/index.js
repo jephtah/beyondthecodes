@@ -12,6 +12,17 @@ import Twitter from "./twitter";
 import Youtube from "./youtube";
 import Arrow from "./arrow";
 import Play from "./play";
+import PodcastPlay from "./podcast-play";
+import Headset from "./headset";
+import Like from "./like";
+import Comment from "./comment";
+import Download from "./download";
+import ApplePodcast from "./apple-podcast";
+import Spotify from "./spotify";
+import GooglePodcast from "./google-podcast";
+import AnchorFM from "./anchor-fm";
+import SoundCloud from "./soundcloud";
+import YoutubeWhite from "./youtube-white";
 export {
   Logo,
   LogoWhite,
@@ -27,4 +38,15 @@ export {
   Youtube,
   Arrow,
   Play,
+  PodcastPlay,
+  Headset,
+  Like,
+  Comment,
+  Download,
+  ApplePodcast,
+  Spotify,
+  GooglePodcast,
+  AnchorFM,
+  SoundCloud,
+  YoutubeWhite,
 };

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Head from "next/head";
 import Layout from "@/layout";
 import { Container } from "@/layout/Container";
@@ -6,6 +7,9 @@ import { Arrow, MicrophoneIcon, Play } from "@/component/icons";
 import { Button } from "@/component/Button";
 import styled from "styled-components";
 import { SearchIcon } from "@/component/icons";
+import { useAnimation, motion } from "framer-motion";
+// import { useInView } from "react-intersection-observer";
+import Animate from "@/layout/Animate";
 
 const HeaderContainer = styled.header`
   display: grid;
@@ -52,6 +56,9 @@ const HeaderTextContainer = styled.div`
   align-content: space-between;
   justify-content: space-between;
   margin-right: 4.43rem;
+  & > div:nth-child(2) {
+    width: 85%;
+  }
   h1 {
     // margin-right: 5rem;
     margin-bottom: 4rem;
@@ -62,6 +69,9 @@ const HeaderTextContainer = styled.div`
   @media screen and (max-width: 1000px) {
     margin-right: 0;
     margin-bottom: 1rem;
+    & > div:nth-child(2) {
+      width: 100%;
+    }
     p {
       margin-bottom: 1rem;
     }
@@ -154,6 +164,7 @@ const LatestEpisodeImageContainer = styled.div`
   background: linear-gradient(360deg, #000000 -14.94%, rgba(0, 0, 0, 0) 77.34%);
   display: flex;
   justify-content: flex-start;
+
   img {
     z-index: -1;
     width: 100%;
@@ -192,6 +203,9 @@ const SectionOneDiv = styled.div`
     font-size: 18px;
     line-height: 37px;
     color: ${({ theme }) => theme.colors.text};
+    span {
+      color: ${({ theme }) => theme.colors.primary};
+    }
   }
   @media screen and (max-width: 1000px) {
     padding: 0rem;
@@ -236,6 +250,7 @@ const AboutHost = styled(Flex)`
 const LatestEpisodeTextContainer = styled(FlexColumn)``;
 
 const SectionThreeDiv = styled.div``;
+
 export default function Home() {
   return (
     <>
@@ -269,43 +284,50 @@ export default function Home() {
                 <img src="./images/header-image-1.png" alt="header image" />
               </ImageContainer>
             </HeaderContainer>
-            <Flex>
-              <img src="./images/microphone.png" alt="microphone" />
-              <SectionOneDiv>
-                <p>
-                  Join Jephtah Uche, Kippa’s Co-founder and Founding CTO as he
-                  speaks with some of Africa’s most seasoned CTOs and Tech Leads
-                  to provide in-depth research and expert analysis on the
-                  technical aspects of lead technical roles.
-                </p>
-                <Button value="See all Episodes" />
-              </SectionOneDiv>
-            </Flex>
-            <AboutHost>
-              <SectionTwoDiv>
-                <h2>About the host</h2>
-                <p>
-                  Jephtah Uche is a technology leader with over a decade of
-                  experience leading teams from different points towards
-                  achieving several outstanding objectives. He has a deep
-                  interest in scaling technology products and teams whilst
-                  applying the best practices. His greatest strength lies in
-                  taking products from 0 - 1. <br />
-                  As the CTO and co-founder of Kippa, Jephtah has trained
-                  engineers to become awesome leaders and even more amazing
-                  managers, and is motivated to do the same for a wider spectrum
-                  of engineers using this community. 
-                  <br />
-                  Jephtah will shine the spotlight on some of the most
-                  experienced technical leaders and lead a wide range of
-                  discussions that are critical for current and aspiring tech
-                  leaders. 
-                </p>
-              </SectionTwoDiv>
-              <div>
-                <img src="./images/jeph.png" alt="Jephtha" />
-              </div>
-            </AboutHost>
+
+            <Animate>
+              <Flex>
+                <img src="./images/microphone.png" alt="microphone" />
+                <SectionOneDiv>
+                  <p>
+                    Join <span>Jephtah Uche</span>, Kippa’s Co-founder and
+                    Founding CTO as he speaks with some of Africa’s most
+                    seasoned CTOs and Tech Leads to provide in-depth research
+                    and expert analysis on the technical aspects of lead
+                    technical roles.
+                  </p>
+                  <Button value="See all Episodes" />
+                </SectionOneDiv>
+              </Flex>
+            </Animate>
+            <Animate>
+              <AboutHost>
+                <SectionTwoDiv>
+                  <h2>About the host</h2>
+                  <p>
+                    Jephtah Uche is a technology leader with over a decade of
+                    experience leading teams from different points towards
+                    achieving several outstanding objectives. He has a deep
+                    interest in scaling technology products and teams whilst
+                    applying the best practices. His greatest strength lies in
+                    taking products from 0 - 1. <br />
+                    As the CTO and co-founder of Kippa, Jephtah has trained
+                    engineers to become awesome leaders and even more amazing
+                    managers, and is motivated to do the same for a wider
+                    spectrum of engineers using this community. 
+                    <br />
+                    Jephtah will shine the spotlight on some of the most
+                    experienced technical leaders and lead a wide range of
+                    discussions that are critical for current and aspiring tech
+                    leaders. 
+                  </p>
+                </SectionTwoDiv>
+                <div>
+                  <img src="./images/jeph.png" alt="Jephtha" />
+                </div>
+              </AboutHost>
+            </Animate>
+
             <SeeAllEpisodesContainer>
               <p>
                 Whether you&apos;re a tech lead, a manager, or a developer
@@ -316,6 +338,7 @@ export default function Home() {
               </p>
               <Button value="See all Episodes" />
             </SeeAllEpisodesContainer>
+
             <Flex>
               <LatestEpisodeImageContainer>
                 <img src="./images/gymming.png" alt="gym" />

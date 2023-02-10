@@ -10,6 +10,7 @@ import {
 import { Container } from "@/layout/Container";
 import { Input } from "../Input";
 import { NewsLetter } from "../NewsLetter";
+import { PodcastOverflow } from "../PodcastsOverflow";
 
 const FooterDiv = styled.footer`
   background-color: black;
@@ -65,6 +66,7 @@ const FooterDiv = styled.footer`
   }
   @media screen and (max-width: 1000px) {
     padding: 2rem 0.5rem;
+    padding-top: 4rem;
     & > div {
       max-width: 90%;
     }
@@ -95,11 +97,13 @@ const FooterDiv = styled.footer`
   }
 `;
 
-const Footer = () => {
+const Footer = ({ overflowFooter = true, podcast = false }) => {
   return (
     <FooterDiv>
       <div>
-        <NewsLetter />
+        {overflowFooter ? podcast ? <PodcastOverflow /> : <NewsLetter /> : null}
+        {/* <NewsLetter /> */}
+
         <LogoWhite />
         <div>
           <div>
