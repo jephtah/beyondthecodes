@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import styled from "styled-components";
 import { Container } from "@/layout/Container";
 import NavLink from "next/link";
@@ -9,13 +9,30 @@ import { motion, AnimatePresence } from "framer-motion";
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  max-width: 70%;
-  margin: 2rem auto;
+  width: 100%;
+  margin: 0rem auto;
+  position: fixed;
+  background-color: ${(props) =>
+    props.scroll && (props.inverse ? "#F15A29" : "white")};
+  right: 0;
+  left: 0;
+  top: 0;
+  transition: all 0.8s ease-out;
+  box-shadow: ${(props) => props.scroll && "0px 0px 50px rgba(0, 0, 0, 0.09)"};
+  div,
+  ul {
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  z-index: 10;
   span {
     display: none;
   }
   ul {
     display: flex;
+    align-items: center;
     list-style: none;
     gap: 4rem;
     a {
@@ -31,25 +48,22 @@ const Nav = styled.nav`
     }
   }
   @media screen and (max-width: 700px) {
-    position: relative;
     flex-direction: column;
     max-width: 100%;
-    // max-width: 90%;
+
     span {
       display: block;
     }
     div {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       width: 100%;
-      padding: 0 2rem;
+      padding: 0.5rem 2rem;
     }
     ul {
       position: absolute;
       flex-direction: column;
       margin-top: 5rem;
-
+      display: ${(props) => (props.open ? "flex" : "none")};
+      transition: all 0.8s ease-out;
       align-self: flex-end;
       text-align: right;
       background-color: ${(props) => (props.inverse ? "#F15A29" : "white")};
@@ -68,33 +82,55 @@ const Nav = styled.nav`
 const active = {
   color: "blue",
 };
+
+const Menu = styled.span`
+  margin: 0;
+  width: 30px;
+  cursor: pointer;
+  &:after,
+  &:before,
+  & span {
+    background-color: ${(props) => (props.inverse ? "#fff" : "#F15A29")};
+    border-radius: 3px;
+    content: "";
+    display: block;
+    height: 2px;
+    margin: 7px 0;
+    transition: all 0.2s ease-in-out;
+  }
+`;
 const Navigation = () => {
   const { pathname } = useRouter();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const inverse = useMemo(() => pathname !== "/", []);
-  const [isOpen, setIsOpen] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(true);
+  const [scrollY, setScrollY] = useState(false);
+  useLayoutEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 20 ? setScrollY(true) : setScrollY(false);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
+    setIsOpen(false);
+  }, []);
   return (
-    <Nav inverse={inverse}>
-      <AnimatePresence>
-        <div>
-          {inverse ? <LogoWhite /> : <Logo />}
-          <span onClick={() => setIsOpen((v) => !v)}>
-            <p style={{ color: "green" }}>Menu</p>
-          </span>
-        </div>
+    <Nav inverse={inverse} scroll={scrollY} open={isOpen}>
+      {/* <AnimatePresence> */}
+      <div>
+        {inverse ? <LogoWhite /> : <Logo />}
+        <Menu inverse={inverse} onClick={() => setIsOpen((v) => !v)}>
+          <span />
+        </Menu>
+      </div>
 
-        <motion.ul
-          initial={{ y: -100, opacity: 0 }}
-          animate={true ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 1 }}
-        >
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/podcast">Podcast</NavLink>
-          <NavLink href="/about-us">About</NavLink>
-          <NavLink href="/contact">Contact</NavLink>
-        </motion.ul>
-      </AnimatePresence>
+      <ul>
+        <NavLink href="/">Home</NavLink>
+        <NavLink href="/podcast">Podcast</NavLink>
+        <NavLink href="/about-us">About</NavLink>
+        <NavLink href="/contact">Contact</NavLink>
+      </ul>
+      {/* </AnimatePresence> */}
     </Nav>
   );
 };

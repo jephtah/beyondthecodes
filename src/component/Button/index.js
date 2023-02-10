@@ -12,7 +12,7 @@ const ButtonContainer = styled.button`
   white-space: nowrap;
   font-weight: ${(props) => props.secondary && "700"};
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 `;
 const Div = styled.div`

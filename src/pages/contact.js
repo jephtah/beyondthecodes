@@ -28,7 +28,7 @@ const Header = styled.header`
     }
   }
   @media screen and (max-width: 700px) {
-    padding-top: 2rem;
+    padding-top: 10rem;
     div {
       max-width: 90%;
       h1 {
@@ -50,6 +50,7 @@ const ImageContainer = styled.img`
   height: 100vh;
   z-index: -1;
   margin-top: 0;
+  object-fit: cover;
 `;
 const FormContainer = styled.section`
   background-color: #fafafa;

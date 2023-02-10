@@ -1,5 +1,6 @@
 import { Input, PodcastCard, PodcastPlay } from "@/component";
 import { Button } from "@/component/Button";
+// import { ScrollDown } from "@/component/icons";
 import Layout from "@/layout";
 import { Container } from "@/layout/Container";
 import Head from "next/head";
@@ -14,18 +15,38 @@ const ImageContainer = styled.img`
   height: 100vh;
   z-index: -1;
   margin-top: 0;
+  object-fit: cover;
+`;
+const ScrollDown = styled.div`
+  position: absolute;
+  top: 80%;
+  right: 55%;
+  z-index: 5;
 `;
 const Header = styled.header`
   text-align: center;
-  color: white;
-  font-size: 40px;
-  line-height: 70px;
-  font-weight: 300;
   padding: 0 10rem;
   height: 100vh;
-  margin: auto 0;
-  span {
-    color: ${({ theme }) => theme.colors.primary};
+  //   position: relative;
+  color: white;
+
+  h1 {
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: 300;
+    margin-top: 10rem;
+    span {
+      color: ${({ theme }) => theme.colors.primary};
+    }
+  }
+  & > div:nth-child(2) {
+  }
+  @media screen and (max-width: 700px) {
+    padding: 0rem;
+    margin-top: 5rem;
+    h1 {
+      font-size: 40px;
+    }
   }
 `;
 const PodcastSection = styled.section`
@@ -133,12 +154,18 @@ const Podcast = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ImageContainer src="./images/podcast-bg.png" alt="" />
+      <ScrollDown>
+        <img src="./images/scroll-down.png" alt="" />
+        <p>Scroll down</p>
+      </ScrollDown>
       <Layout podcast>
         <Container>
           <Header>
-            {/* <h1>
-              Listen to podcast <span>episodes</span>
-            </h1> */}
+            <div>
+              <h1>
+                Listen to podcast <span>episodes</span>
+              </h1>
+            </div>
           </Header>
           <SectionOneDiv>
             <div>

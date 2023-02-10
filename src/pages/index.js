@@ -16,6 +16,7 @@ const HeaderContainer = styled.header`
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   flex-wrap: wrap;
   margin-bottom: 6rem;
+  padding-top: 5rem;
   h1 {
     font-size: 60px;
     line-height: 70px;
@@ -339,36 +340,38 @@ export default function Home() {
                 <Button value="See all Episodes" />
               </SeeAllEpisodesContainer>
             </Animate>
-            <Flex>
-              <LatestEpisodeImageContainer>
-                <img src="./images/gymming.png" alt="gym" />
-                <div>
-                  <p>Eps. 01 - 45 Min</p>
-                  <p>How to build your personal resilience.</p>
-                  <Button
-                    value="Start listening"
-                    secondary
-                    iconComponent={Play}
-                  />
-                </div>
-              </LatestEpisodeImageContainer>
-              <FlexColumn>
-                <div>
-                  <p>See all episodes</p>
-                  <span>
-                    <Arrow />
-                  </span>
-                </div>
-                <div className="section2">
-                  <h3>Latest Episode</h3>
-                  <p>
-                    This section is a short description of this latest episode
-                    and what people should should expect to learn and also the
-                    name of the guest interviewed.
-                  </p>
-                </div>
-              </FlexColumn>
-            </Flex>
+            <Animate>
+              <Flex>
+                <LatestEpisodeImageContainer>
+                  <img src="./images/gymming.png" alt="gym" />
+                  <div>
+                    <p>Eps. 01 - 45 Min</p>
+                    <p>How to build your personal resilience.</p>
+                    <Button
+                      value="Start listening"
+                      secondary
+                      iconComponent={Play}
+                    />
+                  </div>
+                </LatestEpisodeImageContainer>
+                <FlexColumn>
+                  <div>
+                    <p>See all episodes</p>
+                    <span>
+                      <Arrow />
+                    </span>
+                  </div>
+                  <div className="section2">
+                    <h3>Latest Episode</h3>
+                    <p>
+                      This section is a short description of this latest episode
+                      and what people should should expect to learn and also the
+                      name of the guest interviewed.
+                    </p>
+                  </div>
+                </FlexColumn>
+              </Flex>
+            </Animate>
           </Container>
         </main>
       </Layout>

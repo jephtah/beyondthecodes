@@ -13,17 +13,17 @@ const ImageContainer = styled.img`
   height: 100vh;
   z-index: -1;
   margin-top: 0;
+  object-fit: cover;
 `;
 const Header = styled.header`
-  height: 85vh;
+  height: 95vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 10rem;
+  padding-top: 20rem;
   margin-bottom: 20rem;
   overflow: hidden;
-
   div:nth-child(1) {
     color: white;
     text-align: center;
@@ -45,12 +45,13 @@ const Header = styled.header`
     }
   }
   @media screen and (max-width: 700px) {
-    height: 100vh;
+    // height: 100vh;
     margin-bottom: 2rem;
+    padding-top: 5rem;
     div:nth-child(1) {
-      padding-top: 2rem;
+      padding-top: 0rem;
       max-width: 90%;
-      margin: 2rem auto;
+      margin: 1rem auto;
       h1 {
         font-size: 50px;
       }

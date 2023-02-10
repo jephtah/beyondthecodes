@@ -23,6 +23,7 @@ import GooglePodcast from "./google-podcast";
 import AnchorFM from "./anchor-fm";
 import SoundCloud from "./soundcloud";
 import YoutubeWhite from "./youtube-white";
+import ScrollDown from "./scroll-down";
 export {
   Logo,
   LogoWhite,
@@ -49,4 +50,5 @@ export {
   AnchorFM,
   SoundCloud,
   YoutubeWhite,
+  ScrollDown,
 };
