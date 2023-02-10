@@ -160,10 +160,10 @@ const Podcast = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ImageContainer src="./images/podcast-bg.png" alt="" />
-      <ScrollDown>
+      {/* <ScrollDown>
         <img src="./images/scroll-down.png" alt="" />
         <p>Scroll down</p>
-      </ScrollDown>
+      </ScrollDown> */}
       <Layout podcast>
         <Container>
           <Header>
