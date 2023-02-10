@@ -18,10 +18,16 @@ const ImageContainer = styled.img`
   object-fit: cover;
 `;
 const ScrollDown = styled.div`
-  position: absolute;
+  position: fixed;
   top: 80%;
-  right: 55%;
+  right: 50vw;
   z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    color: white;
+  }
 `;
 const Header = styled.header`
   text-align: center;

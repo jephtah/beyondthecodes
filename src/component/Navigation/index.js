@@ -17,7 +17,7 @@ const Nav = styled.nav`
   right: 0;
   left: 0;
   top: 0;
-  transition: all 0.8s ease-out;
+  transition: all 0.2s ease-out;
   box-shadow: ${(props) => props.scroll && "0px 0px 50px rgba(0, 0, 0, 0.09)"};
   div,
   ul {
@@ -124,6 +124,7 @@ const Navigation = () => {
   useEffect(() => {
     setIsOpen(false);
   }, []);
+
   return (
     <Nav inverse={inverse} scroll={scrollY} open={isOpen}>
       {/* <AnimatePresence> */}
