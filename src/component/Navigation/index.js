@@ -113,7 +113,7 @@ const Navigation = () => {
   const { pathname } = useRouter();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const inverse = useMemo(() => pathname !== "/", []);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [scrollY, setScrollY] = useState(false);
   useLayoutEffect(() => {
     window.addEventListener("scroll", () => {
