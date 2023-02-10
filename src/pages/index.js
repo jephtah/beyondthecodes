@@ -194,7 +194,7 @@ const LatestEpisodeImageContainer = styled.div`
   }
 `;
 const SectionOneDiv = styled.div`
-  padding: 6rem;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -327,18 +327,18 @@ export default function Home() {
                 </div>
               </AboutHost>
             </Animate>
-
-            <SeeAllEpisodesContainer>
-              <p>
-                Whether you&apos;re a tech lead, a manager, or a developer
-                looking to advance in your career, the Beyond The Codes Podcast
-                is the perfect resource for you. Be sure to tune in bi-weekly
-                for the latest episode and don’t forget to follow us on social
-                media for additional content and updates.
-              </p>
-              <Button value="See all Episodes" />
-            </SeeAllEpisodesContainer>
-
+            <Animate>
+              <SeeAllEpisodesContainer>
+                <p>
+                  Whether you&apos;re a tech lead, a manager, or a developer
+                  looking to advance in your career, the Beyond The Codes
+                  Podcast is the perfect resource for you. Be sure to tune in
+                  bi-weekly for the latest episode and don’t forget to follow us
+                  on social media for additional content and updates.
+                </p>
+                <Button value="See all Episodes" />
+              </SeeAllEpisodesContainer>
+            </Animate>
             <Flex>
               <LatestEpisodeImageContainer>
                 <img src="./images/gymming.png" alt="gym" />
