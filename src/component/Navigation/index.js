@@ -98,6 +98,16 @@ const Menu = styled.span`
     margin: 7px 0;
     transition: all 0.2s ease-in-out;
   }
+  &:before {
+    transform: ${(props) => props.open && "translate(10px) rotate(45deg)"};
+  }
+  &:after {
+    transform: ${(props) =>
+      props.open && "translateY(-20px) translateX(10px) rotate(-45deg)"};
+  }
+  span {
+    transform: ${(props) => props.open && " translateY(5px)translateX(10px)"};
+  }
 `;
 const Navigation = () => {
   const { pathname } = useRouter();
@@ -119,7 +129,11 @@ const Navigation = () => {
       {/* <AnimatePresence> */}
       <div>
         {inverse ? <LogoWhite /> : <Logo />}
-        <Menu inverse={inverse} onClick={() => setIsOpen((v) => !v)}>
+        <Menu
+          inverse={inverse}
+          onClick={() => setIsOpen((v) => !v)}
+          open={isOpen}
+        >
           <span />
         </Menu>
       </div>
