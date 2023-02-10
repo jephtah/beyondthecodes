@@ -13,7 +13,7 @@ const Nav = styled.nav`
   margin: 0rem auto;
   position: fixed;
   background-color: ${(props) =>
-    props.scroll && (props.inverse ? "#F15A29" : "white")};
+    props.scroll && (props.inverse ? "black" : "white")};
   right: 0;
   left: 0;
   top: 0;
@@ -66,7 +66,7 @@ const Nav = styled.nav`
       transition: all 0.8s ease-out;
       align-self: flex-end;
       text-align: right;
-      background-color: ${(props) => (props.inverse ? "#F15A29" : "white")};
+      background-color: ${(props) => (props.inverse ? "black" : "white")};
       width: 100%;
       padding: 2rem 0;
 
@@ -132,7 +132,14 @@ const Navigation = () => {
         {inverse ? <LogoWhite /> : <Logo />}
         <Menu
           inverse={inverse}
-          onClick={() => setIsOpen((v) => !v)}
+          onClick={() => {
+            setIsOpen((v) => !v);
+            if (!scrollY) {
+              setScrollY(true);
+            } else {
+              setScrollY(true);
+            }
+          }}
           open={isOpen}
         >
           <span />
