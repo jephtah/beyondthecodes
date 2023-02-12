@@ -12,6 +12,7 @@ const Nav = styled.nav`
   width: 100%;
   margin: 0rem auto;
   position: fixed;
+  padding: 0 12%;
   background-color: ${(props) =>
     props.scroll && (props.inverse ? "black" : "white")};
   right: 0;
@@ -50,7 +51,7 @@ const Nav = styled.nav`
   @media screen and (max-width: 700px) {
     flex-direction: column;
     max-width: 100%;
-
+    padding: 0 0%;
     span {
       display: block;
     }

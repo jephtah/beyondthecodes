@@ -32,7 +32,7 @@ const ScrollDown = styled.div`
 const Header = styled.header`
   text-align: center;
   padding: 0 10rem;
-  height: 100vh;
+  height: 90vh;
   //   position: relative;
   color: white;
 
@@ -40,7 +40,7 @@ const Header = styled.header`
     font-size: 80px;
     line-height: 80px;
     font-weight: 300;
-    margin-top: 10rem;
+    margin-top: 20rem;
     span {
       color: ${({ theme }) => theme.colors.primary};
     }
@@ -50,8 +50,10 @@ const Header = styled.header`
   @media screen and (max-width: 700px) {
     padding: 0rem;
     margin-top: 5rem;
+    height: 70vh;
     h1 {
       font-size: 40px;
+      margin-top: 15rem;
     }
   }
 `;
