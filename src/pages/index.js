@@ -137,7 +137,7 @@ const FlexColumn = styled.div`
       border: 1px solid #878787;
       justify-content: center;
       align-items: center;
-      padding: 3px 4px;
+      padding: 2px 6px;
       margin-left: 0.5rem;
     }
   }

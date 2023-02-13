@@ -149,7 +149,7 @@ const Navigation = () => {
 
       <ul>
         <NavLink href="/">Home</NavLink>
-        <NavLink href="/podcast">Podcast</NavLink>
+        <NavLink href="/podcast">Podcasts</NavLink>
         <NavLink href="/about-us">About</NavLink>
         <NavLink href="/contact">Contact</NavLink>
       </ul>
