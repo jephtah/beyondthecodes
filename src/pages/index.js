@@ -15,25 +15,29 @@ const HeaderContainer = styled.header`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   flex-wrap: wrap;
-  margin-bottom: 6rem;
-  padding-top: 5rem;
+  margin-bottom: 15rem;
+  padding-top: 10rem;
+  justify-content: space-between;
   h1 {
     font-size: 60px;
     line-height: 70px;
     letter-spacing: 1.1%;
     font-weight: 800;
-    // margin-bottom: 3rem;
   }
   p {
     font-size: 24px;
     font-weight: 400;
   }
   @media screen and (max-width: 1000px) {
+    padding-top: 5rem;
+    margin-bottom: 10rem;
     grid-template-columns: 1fr;
   }
 `;
 const ImageContainer = styled.div`
   position: relative;
+  justify-self: end;
+
   div {
     position: absolute;
     top: 60%;
@@ -45,10 +49,19 @@ const ImageContainer = styled.div`
   }
   img {
     height: 100%;
-    width: 100%;
   }
   div:nth-child(2) {
     margin-right: 10rem;
+  }
+  @media screen and (max-width: 1000px) {
+    justify-self: center;
+    div {
+      transform: scale(0.7);
+      left: -7%;
+    }
+    img {
+      width: 100%;
+    }
   }
 `;
 const HeaderTextContainer = styled.div`
@@ -211,7 +224,7 @@ const SectionOneDiv = styled.div`
   @media screen and (max-width: 1000px) {
     padding: 0rem;
     p {
-      margin-bottom: 1rem;
+      margin: 1rem 0;
     }
   }
 `;
